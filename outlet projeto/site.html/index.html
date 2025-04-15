@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projeto Joeseni</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    body {
+      background: #f9f9f9;
+    }
+
+    .top-header {
+      background: #600000;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: cursive;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .search {
+      flex: 1;
+      max-width: 300px;
+      margin: 0 15px;
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: none;
+    }
+
+    .main-menu ul {
+      display: flex;
+      list-style: none;
+      gap: 15px;
+      font-size: 14px;
+    }
+
+    .icons {
+      display: flex;
+      gap: 15px;
+      font-size: 20px;
+    }
+
+    .cart-count {
+      background: red;
+      color: white;
+      font-size: 12px;
+      padding: 2px 5px;
+      border-radius: 10px;
+      margin-left: 5px;
+    }
+
+    .whatsapp-bar {
+      background: #00b200;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .whatsapp-bar span {
+      font-weight: bold;
+    }
+
+    .whatsapp-bar button {
+      background: white;
+      color: #00b200;
+      border: none;
+      margin-left: 10px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .products {
+      display: flex;
+      gap: 20px;
+      padding: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 300px;
+      text-align: center;
+      position: relative;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .discount-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #800000;
+      color: white;
+      padding: 5px 8px;
+      font-size: 12px;
+      border-radius: 50%;
+    }
+
+    .buy-button {
+      width: 100%;
+      background: #2ecc71;
+      color: white;
+      padding: 12px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .buy-button:hover {
+      background: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <header class="top-header">
+    <div class="logo">Titulo</div>
+    <input type="text" class="search" placeholder="O que você está buscando?" />
+    <nav class="main-menu">
+      <ul>
+        <li>Categoria 1</li>
+        <li>Categoria 2</li>
+        <li>Categoria 3</li>
+        <li>Categoria 4</li>
+        <li>Categoria 5</li>
+        <li>Categoria 6</li>
+        <li>Categoria 7</li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <span>❤️</span>
+      <span>🛒<span class="cart-count">0</span></span>
+    </div>
+  </header>
+
+  <div class="whatsapp-bar">
+    Agora você pode <strong>comprar</strong> pelo <span>WhatsApp!</span>
+    <button onclick="openWhatsApp()">Fale com a gente!</button>
+  </div>
+
+  <main class="products">
+    <div class="product-card">
+      <img src="inserir imgem" alt="Produto 1">
+      <button class="buy-button">COMPRAR AGORA</button>
+    </div>
+
+    <div class="product-card">
+      <img src="inserir imagem" alt="Produto 2">
+      <button class="buy-button">COMPRAR AGORA</button>
+    </div>
+
+    <div class="product-card">
+      <img src="inserir imagem" alt="Produto 3">
+      <button class="buy-button">COMPRAR AGORA</button>
+    </div>
+  </main>
+
+  <script>
+    let cartCount = 0;
+
+    document.querySelectorAll(".buy-button").forEach(button => {
+      button.addEventListener("click", () => {
+        cartCount++;
+        document.querySelector(".cart-count").textContent = cartCount;
+        alert("Produto adicionado ao carrinho!");
+      });
+    });
+
+    function openWhatsApp() {
+      window.open("https://wa.me/5500000000000", "_blank");
+    }
+  </script>
+</body>
+</html>
